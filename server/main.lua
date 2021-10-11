@@ -84,15 +84,3 @@ AddEventHandler('qb-lapdance:idle', function()
     LapDanceActive = false
 
 end)
-
---[[ 
-RegisterServerEvent("qb-lapdance:GetPlayerData")
-AddEventHandler("qb-lapdance:GetPlayerData", function()
-
-        local src = source
-        local Player = QBCore.Functions.GetPlayer(src)
-        PlayerMoney = Player.PlayerData.money["cash"]
-        PlayerBirthdate = PlayerData.charinfo.birthdate
-
-	TriggerClientEvent("TyreSync", src, PlayerMoney, PlayerBirthdate)
-end) ]]
