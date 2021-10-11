@@ -2,7 +2,6 @@ local InLapdance = false
 local InCooldown = false
 local NearText = false
 local NearMarker = false
-local Player = PlayerPedId()
 
 -- Locale system
 local language = "Locale." .. Config.Language
@@ -61,10 +60,10 @@ Citizen.CreateThread(function()
 				DrawText3D(117.04, -1294.8, 29.25, lapText)
 				if IsControlPressed(0, 38) and not InCooldown then
 					TriggerServerEvent('qb-lapdance:buy')
-					Citizen.Wait(500)--[[ 
+					Citizen.Wait(500)
 				elseif IsControlPressed(0, 38) and InCooldown then
 					QBCore.Functions.Notify("La stripteaseuse a besoin de repos !", "error")
-					Citizen.Wait(5000) ]]
+					Citizen.Wait(5000)
 				end
         	end
     	end
@@ -76,6 +75,7 @@ Citizen.CreateThread(function()
     
     Citizen.Wait(600)
 	
+		local Player = PlayerPedId()
 		local coords = GetEntityCoords(Player)
 		local markerdist = #(coords - vector3(117.04, -1294.8, 28.42))
         if markerdist < 20 then
@@ -93,6 +93,7 @@ end)
 
 RegisterNetEvent('qb-lapdance:lapdance')
 AddEventHandler('qb-lapdance:lapdance', function(PlayerMoney, PlayerBirthdate, TodayDate)
+	local Player = PlayerPedId()
 	Birthdate = {}
 	Date = {}
 
@@ -273,6 +274,7 @@ Citizen.CreateThread(function()
 end)
 
 Citizen.CreateThread(function()
+	local Player = PlayerPedId()
 
 	while true do
 
