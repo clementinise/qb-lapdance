@@ -1,4 +1,4 @@
-local CurrentVersion = '3.2' -- Do Not Change This Value
+local CurrentVersion = '1.0' -- Do Not Change This Value
 local NewestVersion = nil 
 local ChangeLogText = nil 
 
