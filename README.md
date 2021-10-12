@@ -4,15 +4,16 @@ Lapdance resource for the Unicorn strip club - https://forum.cfx.re/t/qbcore-fre
 
 ## FEATURES
 * Strip-Club Blip & Lap Dance Marker at the Unicorn
+* Choose between different framework, `qbcore` is set by default. [standalone, [esx](https://github.com/esx-framework/es_extended/tree/v1-final), [qb-core](https://forum.cfx.re/t/qbcore-framework/4116674)]
 * Update Checker on resource start
 * Run under 0.01ms on idle and 0.03ms when in lap dance (Max reach was 0.07ms)
 * Stripper animation from [esx_lapdance](https://github.com/Loffes/esx_lapdance) by [Loffes](https://forum.cfx.re/u/Loffes)
-* Players need to wait that a lap dance finishes before starting another one to avoid conflict or dupe
+* Check for players already in a lap dance to avoid conflict or dupe
 * French, English language included (Locale system in a QBCore resource yeah you read right)
 * If you run into any issue with this resource, just set 'Config.Debug' to true, it will print some debug logs in the client console. You can then send them [here](https://forum.cfx.re/t/qbcore-free-unicorn-lap-dance-qb-lapdance-v1-0/4769570).
 ## qb-lapdance is easily configurable: 
 * **Config.Framework**
-Choose which framework your server is using so qb-lapdance can work with it [ [esx](https://github.com/esx-framework/es_extended/tree/v1-final), [qb-core](https://forum.cfx.re/t/qbcore-framework/4116674), standalone]
+Choose which framework your server is using so qb-lapdance can work with it [standalone, [esx](https://github.com/esx-framework/es_extended/tree/v1-final), [qb-core](https://forum.cfx.re/t/qbcore-framework/4116674)]
 * **Config.LapDanceCost**
 Set the cost of the lap dance
 * **Config.LegMoney**
