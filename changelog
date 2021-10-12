@@ -1,0 +1,2 @@
+- You can now choose between different framework: esx, qbcore, standalone
+- BUG FIXES: Missing locale 'StripperPause' added
