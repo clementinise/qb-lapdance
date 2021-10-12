@@ -1,4 +1,4 @@
-# qb-lapdance [![Release](https://img.shields.io/badge/Release-V%201.0-blue)](https://github.com/clementinise/qb-lapdance/releases/latest)
+# qb-lapdance [![Release](https://img.shields.io/badge/Release-V%201.1-blue)](https://github.com/clementinise/qb-lapdance/releases/latest)
 
 Lapdance resource for the Unicorn strip club - https://forum.cfx.re/t/qbcore-free-unicorn-lap-dance-qb-lapdance-v1-0/4769570
 
@@ -11,6 +11,8 @@ Lapdance resource for the Unicorn strip club - https://forum.cfx.re/t/qbcore-fre
 * French, English language included (Locale system in a QBCore resource yeah you read right)
 * If you run into any issue with this resource, just set 'Config.Debug' to true, it will print some debug logs in the client console. You can then send them [here](https://forum.cfx.re/t/qbcore-free-unicorn-lap-dance-qb-lapdance-v1-0/4769570).
 ## qb-lapdance is easily configurable: 
+* **Config.Framework**
+Choose which framework your server is using so qb-lapdance can work with it [ [esx](https://github.com/esx-framework/es_extended/tree/v1-final), [qb-core](https://forum.cfx.re/t/qbcore-framework/4116674), standalone]
 * **Config.LapDanceCost**
 Set the cost of the lap dance
 * **Config.LegMoney**
