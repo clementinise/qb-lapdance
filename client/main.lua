@@ -304,7 +304,6 @@ Citizen.CreateThread(function()
 end)
 
 Citizen.CreateThread(function()
-	local Player = PlayerPedId()
 
 	while true do
 
@@ -314,7 +313,7 @@ Citizen.CreateThread(function()
 			Citizen.Wait(0)
 		end
 	
-	
+		local Player = PlayerPedId()
 		local coords = GetEntityCoords(Player)
 		local sitdist = #(coords - vector3(118.75, -1301.97, 28.42))
 		if sitdist < 1.5 and InLapdance then
