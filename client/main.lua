@@ -9,6 +9,8 @@ language = (load)("return "..language)()
 
 -- Locale in var
 lapText = language.LapText
+StandalonelapText = language.StandaloneLapText
+StripperPause = language.StripperPause
 
 -- Create Blips
 Citizen.CreateThread(function()	
@@ -30,6 +32,17 @@ Citizen.CreateThread(function()
 	end
 end)
 
+RegisterNetEvent('qb-lapdance:showNotify')
+AddEventHandler('qb-lapdance:showNotify', function(notify)
+	ShowAboveRadarMessage(notify)
+end)
+
+function ShowAboveRadarMessage(message)
+	SetNotificationTextEntry("STRING")
+	AddTextComponentString(message)
+	DrawNotification(0,1)
+end
+
 function DrawText3D(x, y, z, text)
 	SetTextScale(0.35, 0.35)
     SetTextFont(4)
@@ -46,6 +59,11 @@ function DrawText3D(x, y, z, text)
 end
 
 Citizen.CreateThread(function()
+	
+	if Config.Framework == "standalone" then
+		lapText = StandalonelapText
+	end
+
     while true do
     
     	if not NearMarker then 
@@ -60,9 +78,12 @@ Citizen.CreateThread(function()
 				DrawText3D(117.04, -1294.8, 29.25, lapText)
 				if IsControlPressed(0, 38) and not InCooldown then
 					TriggerServerEvent('qb-lapdance:buy')
-					Citizen.Wait(500)
-				elseif IsControlPressed(0, 38) and InCooldown then
-					QBCore.Functions.Notify("La stripteaseuse a besoin de repos !", "error")
+					Citizen.Wait(5000)
+				elseif IsControlPressed(0, 38) and InCooldown and Config.Framework == 'qbcore' then
+					QBCore.Functions.Notify(StripperPause, "error")
+					Citizen.Wait(5000)
+				elseif IsControlPressed(0, 38) and InCooldown and Config.Framework ~= 'qbcore' then
+					ShowAboveRadarMessage(StripperPause)
 					Citizen.Wait(5000)
 				end
         	end
@@ -97,21 +118,27 @@ AddEventHandler('qb-lapdance:lapdance', function(PlayerMoney, PlayerBirthdate, T
 	Birthdate = {}
 	Date = {}
 
-	index = 1
-	for value in string.gmatch(PlayerBirthdate, "[^-]+") do
-		Birthdate[index] = value
-		index = index + 1
-	end
+	if Config.Framework == 'qbcore' then
+		index = 1
+		for value in string.gmatch(PlayerBirthdate, "[^-]+") do
+			Birthdate[index] = value
+			index = index + 1
+		end
 
-	index = 1
-	for value in string.gmatch(TodayDate, "[^-]+") do
-		Date[index] = value
-		index = index + 1
-	end
+		index = 1
+		for value in string.gmatch(TodayDate, "[^-]+") do
+			Date[index] = value
+			index = index + 1
+		end
 
-	Year = Date[1] - Birthdate[1]
-	Month = Date[2] - Birthdate[2]
-	Day = Date[3] - Birthdate[3]
+		Year = Date[1] - Birthdate[1]
+		Month = Date[2] - Birthdate[2]
+		Day = Date[3] - Birthdate[3]
+	else
+		Year = 1000
+		Month = 0
+		Day = 0
+	end
 		
 	RequestModel(1846523796)
 	InCooldown = true
@@ -150,16 +177,19 @@ AddEventHandler('qb-lapdance:lapdance', function(PlayerMoney, PlayerBirthdate, T
 		SetPedComponentVariation(SpawnObject, 8, 1) -- Topless
 	end
 	
-	if PlayerMoney >= Config.LegMoney then
-		SetPedComponentVariation(SpawnObject, 9, 1)
-	else
-		SetPedComponentVariation(SpawnObject, 9, 0)
+	if Config.Framework ~= 'standalone' then
+		if PlayerMoney >= Config.LegMoney then
+			SetPedComponentVariation(SpawnObject, 9, 1)
+		else
+			SetPedComponentVariation(SpawnObject, 9, 0)
+		end
 	end
 
 	if Config.Debug then
 		print("------ qb-lapdance : Debug print start ------")
 		print("Player cash: ", PlayerMoney, "Player birthdate: ", PlayerBirthdate, "Today date: ", TodayDate)
 		print('Config.Language is set to: ' .. Config.Language)
+		print('Framework used: ' .. Config.Framework)
 		print(Config.Language .. "", language)
 		--[[ print("Birthdate split: ", Birthdate[1], Birthdate[2], Birthdate[3])
 		print("Date split: ", Date[1], Date[2], Date[3]) ]]
