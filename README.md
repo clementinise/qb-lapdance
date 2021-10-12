@@ -5,7 +5,7 @@ Lapdance resource for the Unicorn strip club - https://forum.cfx.re/t/qbcore-fre
 ## FEATURES
 * Strip-Club Blip & Lap Dance Marker at the Unicorn
 * Choose between different framework, `qbcore` is set by default. [standalone, [esx](https://github.com/esx-framework/es_extended/tree/v1-final), [qb-core](https://forum.cfx.re/t/qbcore-framework/4116674)]
-* Update Checker on resource start
+* Update Checker and changelog if new update found directly in console on resource start
 * Run under 0.01ms on idle and 0.03ms when in lap dance (Max reach was 0.07ms)
 * Stripper animation from [esx_lapdance](https://github.com/Loffes/esx_lapdance) by [Loffes](https://forum.cfx.re/u/Loffes)
 * Check for players already in a lap dance to avoid conflict or dupe
