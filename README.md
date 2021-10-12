@@ -30,7 +30,7 @@ This config will let you easily modify the blip to your need. It also include co
 * **Config.BlipCoord**
 If you want to move the blip on the map, change this.
 * **Config.Language**
-Set the language variable that will be used for the locale system. For now, qb-lapdance has translation in French and English (fr or en)
+Set the language variable that will be used for the locale system. For now, qb-lapdance has translation in French and English (fr or en), but you can easily create your own translation!
 
 
 
