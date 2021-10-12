@@ -1,4 +1,4 @@
-# qb-lapdance [![Release](https://img.shields.io/badge/Release-V%201.1-blue)](https://github.com/clementinise/qb-lapdance/releases/latest)
+# qb-lapdance [![Release](https://img.shields.io/badge/Release-V%201.2-blue)](https://github.com/clementinise/qb-lapdance/releases/latest)
 
 Lapdance resource for the Unicorn strip club - https://forum.cfx.re/t/qbcore-free-unicorn-lap-dance-qb-lapdance-v1-0/4769570
 
