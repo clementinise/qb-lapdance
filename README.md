@@ -44,9 +44,6 @@ Some new features will be added soon:  Being able to use the 7 seats and not onl
 
 **Preview:** [Coming Soon]()
 
-### Requirements
-* [qb-core](https://forum.cfx.re/t/qbcore-framework/4116674)
-
 ### Installation
 Download the [latest release](https://github.com/clementinise/qb-lapdance/releases/latest).
 
