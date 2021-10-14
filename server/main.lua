@@ -1,4 +1,5 @@
 ESX = nil
+local QBCore = exports['qb-core']:GetCoreObject()
 
 local CurrentVersion = '1.1' -- Do Not Change This Value
 local NewestVersion = nil 
