@@ -1,3 +1,4 @@
+local QBCore = exports['qb-core']:GetCoreObject()
 local InLapdance = false
 local InCooldown = false
 local NearText = false
