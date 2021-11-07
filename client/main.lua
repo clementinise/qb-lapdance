@@ -149,7 +149,7 @@ AddEventHandler('qb-lapdance:lapdance', function(PlayerMoney, PlayerBirthdate, T
 	end
 
 	SetEntityHeading(Player, 120.18)
-	local SpawnObject = CreatePed(4, 1846523796, 116.59, -1301.04, 28.05)
+	local SpawnObject = CreatePed(4, 1846523796, 116.59, -1301.04, 28.05, true)
 	SetPedComponentVariation(SpawnObject, 1, 0) -- Head
 	SetPedComponentVariation(SpawnObject, 2, 0) -- Hair
 	SetPedComponentVariation(SpawnObject, 3, 0) -- Torso
